@@ -21,7 +21,7 @@ public class EmpController {
 	EmployeeService service;
 	@PostMapping("/getemp")
 	public ResponseEntity<Object> getEmployeeConfigs(@RequestBody String empReqst)
-	{	//System.out.println(service.getAllEmployees().get(0).getAddress().getCountry());
+	{	
 		 ExecutionResult execute= service.getGraphQL().execute(empReqst);
 		 return new ResponseEntity<>(execute, HttpStatus.OK);
 	}
